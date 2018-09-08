@@ -39,6 +39,7 @@ public class BubbleConfigBuilder {
     boolean showProgressInFloat;
     long animDuration;
     boolean touchToSeek;
+    boolean seekStepSection;
     boolean seekBySection;
     int bubbleColor;
     int bubbleTextSize;
@@ -188,6 +189,11 @@ public class BubbleConfigBuilder {
         return this;
     }
 
+    public BubbleConfigBuilder seekStepSection() {
+        this.seekStepSection = true;
+        return this;
+    }
+
     public BubbleConfigBuilder seekBySection() {
         this.seekBySection = true;
         return this;
@@ -223,8 +229,8 @@ public class BubbleConfigBuilder {
         return this;
     }
 
-    public BubbleConfigBuilder rtl() {
-        this.rtl = true;
+    public BubbleConfigBuilder rtl(boolean rtl) {
+        this.rtl = rtl;
         return this;
     }
 
@@ -326,6 +332,10 @@ public class BubbleConfigBuilder {
 
     public boolean isTouchToSeek() {
         return touchToSeek;
+    }
+
+    public boolean isSeekStepSection() {
+        return seekStepSection;
     }
 
     public boolean isSeekBySection() {
